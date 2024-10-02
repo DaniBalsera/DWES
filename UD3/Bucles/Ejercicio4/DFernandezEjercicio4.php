@@ -26,4 +26,7 @@ for ($i = 0; $i < count($colores); $i++) {
 }
 
 echo "</table>";
+
+echo "<br>";
+echo "<tr><td colspan='11'><a href='https://github.com/DaniBalsera/PracticasDServicios/blob/main/UD3/Bucles/Ejercicio4/DFernandezEjercicio4.php' target='_blank'>Enlace a repositorio en github</a></td></tr>";
 ?>

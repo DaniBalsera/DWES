@@ -24,4 +24,6 @@ for($i = 0; $i < $numDias; $i ++)
     echo '</br></br>';
 }
 
+echo "<tr><td colspan='11'><a href='https://github.com/DaniBalsera/PracticasDServicios/blob/main/EjerciciosClase/ArrayDiasSemana.php' target='_blank'>Enlace a repositorio en github</a></td></tr>";
+
 ?>

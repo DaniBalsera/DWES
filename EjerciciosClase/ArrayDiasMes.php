@@ -31,4 +31,8 @@ foreach ($meses as $clave => $valor) {
         echo "$clave tiene $valor días.</br></br>";
     }
 }
+
+
+echo "<br>";
+        echo "<tr><td colspan='11'><a href='https://github.com/DaniBalsera/PracticasDServicios/blob/main/EjerciciosClase/ArrayDiasMes.php' target='_blank'>Enlace a repositorio en github</a></td></tr>";
 ?>

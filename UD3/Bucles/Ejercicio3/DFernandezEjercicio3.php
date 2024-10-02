@@ -42,7 +42,8 @@ foreach ($tabla as $fila => $valores)
 }
 
 echo "</table>";
-
+echo "<br>";
+echo "<tr><td colspan='11'><a href='https://github.com/DaniBalsera/PracticasDServicios/blob/main/UD3/Bucles/Ejercicio3/DFernandezEjercicio3.php' target='_blank'>Enlace a repositorio en github</a></td></tr>";
 
 echo "<style>
 
@@ -70,3 +71,5 @@ th {
 }
 </style>";
 ?>
+
+

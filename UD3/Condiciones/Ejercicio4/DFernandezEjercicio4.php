@@ -215,6 +215,7 @@ switch ($hora) {
 
 <div class="div1">
 
+
 <table class="tabla1">
   <thead>
     <tr>
@@ -246,9 +247,14 @@ switch ($hora) {
     <li>Desarrollo de aplicaciones móviles en Android Studio</li>
     <li>Reparación de equipos</li>
     <li>Administración de bases de datos</li>
+    <br>
+    <a href='https://github.com/DaniBalsera/PracticasDServicios/blob/main/UD3/Condiciones/Ejercicio4/DFernandezEjercicio4.php' target='_blank' style="color: white">Enlace a repositorio en github</a>
   </ul>
  
 </div>
+
+
+
 </body>
 
 <!-- He creado un apartado de estilos aqui para asociar las variables $color, $texto y $imagenEstacion !-->
@@ -269,4 +275,5 @@ switch ($hora) {
             display: flex;
         }
     </style>
+
 </html>
