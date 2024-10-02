@@ -26,6 +26,8 @@ while($contador < 3)
 
 echo "La suma es: $suma";
 
-
+echo "<br><br>";
+$url = "https://github.com/DaniBalsera/PracticasDServicios/blob/main/UD3/Bucles/Ejercicio2/DFernandezEjercicio2.php";
+echo '<a href="' . $url . '">Enlace a repositorio en github</a>';
 
 ?>

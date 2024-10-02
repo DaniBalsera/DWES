@@ -14,6 +14,7 @@ for ($valor > 0; $valor <=10; $valor++)
 
     echo " $valor " ;
 }
-
-
+echo "<br><br>";
+$url = "https://github.com/DaniBalsera/PracticasDServicios/blob/main/UD3/Bucles/Ejercicio1/DFernandezEjercicio1.php";
+echo '<a href="' . $url . '">Enlace a repositorio en github</a>';
 ?>
