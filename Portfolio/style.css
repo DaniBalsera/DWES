@@ -1,0 +1,67 @@
+
+
+body{
+
+    background-color: rgb(124, 124, 124);
+    
+}
+.div1 {
+    width: 50vw;
+    height: auto; 
+    display: flex;
+    justify-content: flex-start; 
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+  }
+  
+
+  .tabla1{
+
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  .tabla1 th, .tabla1 td{
+
+    border: 1px solid #000000;
+    padding: 12px;
+    text-align: left;
+    
+
+  }
+
+  .tabla1 th{
+
+    background-color:azure;
+    color: black;
+  }
+
+  .tabla1 td{
+
+    color: black;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .div2{
+
+    font-size: small;
+    width: 50vw;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: bold;
+    
+  }
+
+  .img1{
+
+    width: 250px;
+    height: 320px;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
