@@ -1,0 +1,123 @@
+
+
+
+.div1 {
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra la tabla horizontalmente */
+    align-items: center; /* Centra verticalmente si es necesario */
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.tabla1 {
+    width: 80%; /* Ocupará el 80% del ancho disponible, manteniendo márgenes */
+    max-width: 800px; /* Define un máximo ancho */
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.tabla1 th, .tabla1 td {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordes semi-transparentes */
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s; /* Transición suave para hover */
+}
+
+.tabla1 th {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Degradado en el encabezado */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+.tabla1 td {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    position: relative; /* Posicionamiento para efectos */
+    overflow: hidden; /* Para bordes redondeados */
+}
+
+.tabla1 td:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Color de fondo al pasar el ratón */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna */
+}
+
+.tabla1 tr:nth-child(even) {
+    background-color: rgba(240, 248, 255, 0.5); /* Color de fila alterna */
+}
+
+.tabla1 tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.5); /* Color de fila alterna */
+}
+
+.tabla1 th:hover {
+    background: linear-gradient(135deg, #8f94fb, #4e54c8); /* Cambio de degradado al pasar el ratón */
+}
+
+
+.div2 {
+    width: 80%; /* Ocupará el 80% del ancho disponible, ajustándose al tamaño de la pantalla */
+    max-width: 600px; /* Define un máximo ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: 50px auto; /* Auto margen para centrar */
+    background-color: darkslategray;
+    padding: 20px; /* Espaciado interno */
+    color: #f0f0f0;
+}
+
+.hb {
+    font-size: 40px;
+    color: greenyellow;
+    text-align: center; /* Centramos el título */
+    margin-bottom: 20px;
+}
+
+
+.img1 {
+  width: 250px;
+  height: 320px;
+  border-radius: 20px;
+  background-position: center;
+  background-size: contain;
+  margin: 50px auto; /* Este cambio centrará la imagen */
+  display: block; /* Asegúrate de que sea un bloque para que funcione el auto margin */;
+  margin-top: -30px;
+}
+
+.tituloP{
+
+  width: 250px;
+  height: 320px;
+  border-radius: 20px;
+  background-position: center;
+  background-size: contain;
+  margin: 50px auto; /* Este cambio centrará la imagen */
+  display: block; /* Asegúrate de que sea un bloque para que funcione el auto margin */;
+  margin-top: 12px;
+  margin-bottom: -200px;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center;     /* Centra los elementos horizontalmente */
+}
+
+.pActividades {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 10px; /* Añade un pequeño margen para separar el texto del ícono */
+}
+
+.iconoCarpeta {
+    width: 140px;
+    height: 140px;
+}
