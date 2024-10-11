@@ -129,12 +129,18 @@ foreach ($dias as $dia)
         $claseDia = "style='background-color: green; color: white;'";
     }
 
-    //Comprobamos si es Festivo
+    //Comprobamos si es Festivo o es domingo
 
-    if (in_array(sprintf("%02d-%02d", $mesNumero, $dia), $diasFestivos))
-    {
+    $esFestivo = in_array(sprintf("%02d-%02d", $mesNumero, $dia), $diasFestivos);
+
+
+    $esDomingo = date('N', strtotime("$anio-$mesNumero-$dia")) == 7;
+
+    if ($esFestivo || $esDomingo) {
         $claseDia = "style='background-color: red; color: white;'";
     }
+
+
 
     // Imprimimos la celda del día con su estilo correspondiente
     echo "<td $claseDia >" . $dia. "</td>";

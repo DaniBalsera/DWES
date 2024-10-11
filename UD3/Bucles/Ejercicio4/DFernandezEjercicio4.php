@@ -1,8 +1,71 @@
 <?php
 
 $colores = [
-    "#FF5733", "#33FF57", "#3357FF", "#F333FF", "#FF33B5",
-    "#33FFF5", "#FFB533", "#B533FF", "#33B5FF", "#5733FF"
+
+         // Tonos de rojo
+    "#FF0000",
+    "#FF6347",
+    "#FF4500",
+    "#DC143C",
+    "#B22222",
+    "#8B0000",
+
+    // Tonos de azul
+    "#0000FF",
+    "#1E90FF",
+    "#00BFFF",
+    "#4682B4",
+    "#5F9EA0",
+    "#00008B",
+
+    // Tonos de verde
+    "#008000",
+    "#00FF00",
+    "#32CD32",
+    "#00FA9A",
+    "#228B22",
+    "#006400",
+
+    // Tonos de amarillo
+    "#FFFF00",
+    "#FFD700",
+    "#FFA500",
+    "#FF8C00",
+    "#DAA520",
+
+    // Tonos de púrpura
+    "#800080",
+    "#8A2BE2",
+    "#9370DB",
+    "#9400D3",
+    "#9932CC",
+
+    // Tonos de rosa
+    "#FFC0CB",
+    "#FF69B4",
+    "#FF1493",
+    "#DB7093",
+
+    // Tonos de gris
+    "#808080",
+    "#A9A9A9",
+    "#C0C0C0",
+    "#D3D3D3",
+    "#696969",
+    "#2F4F4F",
+
+    // Otros colores comunes
+    "#F5F5DC",
+    "#FFE4C4",
+    "#D2691E",
+    "#A52A2A",
+    "#00FFFF",
+    "#7FFFD4",
+    "#40E0D0",
+    "#F0E68C",
+    "#800000",
+    "#FFFFFF",
+    "#000000"
 ];
 
 echo "<table style='border-collapse: collapse; width: 30%;'>"; // Ajuste para el ancho de la tabla
