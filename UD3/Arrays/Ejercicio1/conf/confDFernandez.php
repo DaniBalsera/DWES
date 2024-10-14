@@ -2,11 +2,11 @@
 
 $principales = [
 
-    "Ej1" => "/DWES/UD3/Arrays/Ejercicio1/conf/confDFernandez.php",
-    "Ej2" => "/DWES/conf/confDFernandez.php",
-    "Ej3" => "/DWES/UD3/Arrays/Ejercicio3/DFernandezEjercicio3.php",
-    "Ej4" => "/DWES/UD3/Arrays/Ejercicio4/DFernandezEjercicio4.php",
-    "Ej5" => "/DWES/UD3/Arrays/Ejercicio5/DFernandezEjercicio5.php",
+    "Ej1" => "/DWES/UD3/Arrays/Ejercicio1/DFernandezEjercicio1Juego.php",
+    "Ej2" => "/DWES/UD3/Arrays/Ejercicio1/DFernandezEjercicio1Meses.php",
+    "Ej3" => "/DWES/UD3/Arrays/Ejercicio1/DFernandezEjercicio1Notas.php",
+    "Ej4" => "/DWES/UD3/Arrays/Ejercicio1/DFernandezEjercicio1Paises.php",
+    "Ej5" => "/DWES/UD3/Arrays/Ejercicio1/DFernandezEjercicio1Verbos.php",
     
 ];
 
@@ -15,8 +15,6 @@ $urlEj2 = $principales['Ej2'];
 $urlEj3 = $principales['Ej3'];
 $urlEj4 = $principales['Ej4'];
 $urlEj5 = $principales['Ej5'];
-
-
 
 ?>
 <!DOCTYPE html>
@@ -30,40 +28,40 @@ $urlEj5 = $principales['Ej5'];
 <body> 
 
 <div class="contenedor">
-<a href="/DWES/UD3/conf/confDFernandez.php">
+<a href="/DWES/UD3/Arrays/conf/confDFernandez.php">
     <img class="iconoCarpeta" src="VolverAtras.png" style="width: 40px; height: auto; cursor: pointer; margin-right: 3000px">
 </a>
-    <p class="pActividades">Arrays</p>
+    <p class="pActividades">Ejercicio1</p>
    
     <div class="carpetas">
         <div class="carpeta">
             <a href="<?php echo $urlEj1; ?>">
                 <img src="CarpetaAnimada.png" style="width: 150px; height: auto; cursor: pointer;">
-                <p class="unidad">Ejercicio 1</p>
+                <p class="unidad">Barcos</p>
             </a>
         </div>
         <div class="carpeta">
             <a href="<?php echo $urlEj2; ?>">
                 <img src="CarpetaAnimada.png" style="width: 150px; height: auto; cursor: pointer;">
-                <p class="unidad">Ejercicio 2</p>
+                <p class="unidad">Meses</p>
             </a>
         </div>
         <div class="carpeta">
             <a href="<?php echo $urlEj3; ?>">
                 <img src="CarpetaAnimada.png" style="width: 150px; height: auto; cursor: pointer;">
-                <p class="unidad">Ejercicio 3</p>
+                <p class="unidad">Notas</p>
             </a>
         </div>
         <div class="carpeta">
             <a href="<?php echo $urlEj4; ?>">
                 <img src="CarpetaAnimada.png" style="width: 150px; height: auto; cursor: pointer;">
-                <p class="unidad">Ejercicio 4</p>
+                <p class="unidad">Paises</p>
             </a>
         </div>
         <div class="carpeta">
             <a href="<?php echo $urlEj5; ?>">
                 <img src="CarpetaAnimada.png" style="width: 150px; height: auto; cursor: pointer;">
-                <p class="unidad">Ejercicio 5</p>
+                <p class="unidad">Verbos</p>
             </a>
         </div>
     </div>

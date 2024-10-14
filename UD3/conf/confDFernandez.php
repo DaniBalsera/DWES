@@ -2,8 +2,8 @@
 
 $principales = [
 
-    "Arrays" => "/DWES/UD3/Arrays/confDFernandez.php",
-    "Bucles" => "/DWES/UD3/Bucles/confDFernandez.php",
+    "Arrays" => "/DWES/UD3/Arrays/conf/confDFernandez.php",
+    "Bucles" => "/DWES/UD3/Bucles/conf/confDFernandez.php",
     "Condiciones" => "/DWES/UD3/Condiciones/conf/confDFernandez.php",
     
 ];
