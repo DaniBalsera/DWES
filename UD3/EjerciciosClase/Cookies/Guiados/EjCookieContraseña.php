@@ -1,34 +1,45 @@
 <?php 
+/*
+<?php
+// Inicializacion variables
 
-// Creamos una variable para indicar que el formulario aun no se ha procesado
+$usuario = "";
+$pass = "";
 $formularioProcesado = false;
-
-// Verificamos si ya existen las cookies para rellenar automáticamente los campos
-$usuario = isset($_COOKIE['usuario']) ? $_COOKIE['usuario'] : '';
-$pass = isset($_COOKIE['contraseña']) ? $_COOKIE['contraseña'] : '';
-
+$recordar = false;
+$mensajeError = "";
 // Funcion en caso de que se pulse el botón de enviar
 if (isset($_POST['enviar'])) {
     $formularioProcesado = true;
+}
 
-    // Recogemos los datos del formulario
+if ($formularioProcesado){
+
     $usuario = $_POST['usuario'];
     $pass = $_POST['contraseña'];
-    $recordar = isset($_POST['recordar']);
-    
-    // Si la opción "recordar" está marcada, guardamos las cookies
-    if ($recordar) {
-        setcookie("usuario", $usuario, time() + 3600);
-        setcookie("contraseña", $pass, time() + 3600);
-    } else {
-        // Si no está marcada, eliminamos las cookies existentes
-        setcookie("usuario", '', time() - 3600);
-        setcookie("contraseña", '', time() - 3600);
-    }
 
-    echo "<p><strong>Usuario:</strong> $usuario</p>";
-    echo "<p><strong>Contraseña:</strong> $pass</p>"; 
-} else {
+// Comprobar que no haya ningun campo vacio
+
+if (($usuario == "") || ($pass == "")){
+
+    $formularioProcesado = false;
+    $mensajeError = "Campo requerido";
+}
+
+// Comprobar casilla checkbox
+
+if($_POST['recordar']){
+
+    $recordar = true;
+    setcookie("cUsuario", $usuario, time()+3600);
+    setcookie("cContrasena", $pass, time()+3600);
+}else {
+
+    setcookie("cUsuario", $usuario, time()-3600);
+    setcookie("cContrasena", $pass, time()-3600);
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,8 +56,8 @@ if (isset($_POST['enviar'])) {
             <h1 class="titulo">INICIO DE SESION</h1>
             <div style="align-content: center">
                 <p> Usuario: <input type="text" name="usuario" value="<?php echo htmlspecialchars($usuario); ?>" > </p>
-                <p> Contraseña: <input type="text" name="contraseña" value="<?php echo htmlspecialchars($pass); ?>" > </p>
-                <p> Recordar contraseña <input type="checkbox" name="recordar" <?php echo isset($_COOKIE['usuario']) ? 'checked' : ''; ?>></p>
+                <p> Contraseña: <input type="text" name="contraseña" value=" > </p>
+                <p> Recordar contraseña <input type="checkbox" name="recordar" ></p>
                 <br><br>
                 <input type="submit" name="enviar" value="Iniciar sesión">
             </div>
@@ -54,5 +65,6 @@ if (isset($_POST['enviar'])) {
     </body>
 </html>
 <?php 
-}
+
 ?>
+*/
