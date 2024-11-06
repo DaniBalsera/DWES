@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         }
-    </style>
+    </style>m 
 </head>
 <body>
 
