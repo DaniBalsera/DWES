@@ -8,10 +8,6 @@
 </head>
 <body> 
 
-<a href="/DWES/UD3/Condiciones/conf/confDFernandez.php">
-    <img class="iconoCarpeta" src="VolverAtras.png" style="width: 40px; height: auto; cursor: pointer; margin-right: 3000px">
-</a>
-<br><br>
 
 <?php
 // Creamos las variables necesarias para trabajar

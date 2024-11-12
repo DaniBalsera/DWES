@@ -1,7 +1,3 @@
-<a href="/DWES/UD3/Bucles/conf/confDFernandez.php">
-    <img class="iconoCarpeta" src="VolverAtras.png" style="width: 40px; height: auto; cursor: pointer; margin-right: 3000px">
-</a>
-<br><br>
 
 <?php 
 
