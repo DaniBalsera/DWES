@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1%;
+    padding: 0;
+    background-color:#1E1E1E;
+   
+}
+
+/*Cabecera*/
+
+/* Contenedor de nombre */
+.header-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/*MENU PRINCIPAL*/
+
+.menu1{
+
+    display: inline-block;
+    background-color: #4CAF50;
+    border: 3px solid #070707;
+    width: 9%;
+    color: white;
+    margin-top: 1%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+    position: relative;
+    border-radius: 5px;
+
+}
+
+.menu1:hover{
+    background-color: white;
+    color: #2e5b75;
+    cursor: pointer;
+}
+
+
+/*SUBMENUS*/
+
+
+.submenu {
+    display: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+.menu1:hover .submenu {
+    display: block;
+    
+}
+
+/*DISEÑO INDIVIDUAL DEL MENU DEL SUBMENU DE SERVICIOS Y ACERCA*/
+
+.submenu .menu1 {
+    display: inline-block;
+    width: 10vw;
+    position: relative;
+    margin-top: 3%;
+    padding: 8%;
+   
+}
+
+/*Diseño para el submenu de los submenus que haya dentro de diseño web y marketing*/
+
+.menu1 .submenu .submenu2 {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+
+
+.menu1 .submenu .menu1:hover .submenu2 {
+    display: block;
+
+}
+
+
+.menu1 .submenu .submenu2 .menu1{
+
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 0;
+    margin-bottom: 3%;
+    width: 10vw;
+}
+
+
+/* Estilo para submenu3  de plataformas */
+.menu1 .submenu .submenu2 .submenu3 {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.menu1 .submenu .submenu2 .menu1:hover .submenu3 {
+    display: block;
+}
+
+/* Estilo de submenu3 */
+.menu1 .submenu .submenu2 .submenu3 .menu1 {
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 0;
+    margin-bottom: 3%;
+    width: 10vw;
+}
+
+/* Estilo para centrar el nombre en el encabezado */
+#miNombre {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*HABILIDADES*/
+
+/* Estilos para la sección de habilidades */
+.habilidades {
+    margin-top: 3%;
+    padding: 2%;
+    background-color: #2e2e2e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.habilidades h2 {
+    font-size: 32px;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+/* Estilos de cada categoría de habilidades */
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* Lista de habilidades dentro de cada categoría */
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Cambiar color al pasar el cursor por los elementos de la lista */
+.skill-list li:hover {
+    background-color: white;
+    color: #4CAF50;
+    
+}
+
+/*ESTILO DE UD3*/
+
+/* UD3 Buttons */
+.ud3-section {
+    text-align: center;
+    margin-top: 3%;
+    padding: 2%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2%;
+}
+
+.ud3-button, .exercise-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ud3-button:hover, .exercise-buttons button:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+/* Exercise Buttons Container */
+.exercise-buttons {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ /* Estilos para la sección de contacto */
+ .contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-info {
+    width: 45%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.contact-info h2 {
+    text-align: center;
+    color: #3c8dbc;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #3c8dbc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
