@@ -241,7 +241,7 @@ a {
     justify-content: space-around;
     padding: 20px;
     margin-top: 20px;
-    color:#070707
+    
 }
 
 .contact-info {
@@ -250,6 +250,8 @@ a {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin-left: 15%;
+    
 }
 
 .contact-info h2 {
@@ -281,6 +283,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 15%;
 }
 
 .contact-image img {
