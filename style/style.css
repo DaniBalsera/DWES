@@ -241,6 +241,7 @@ a {
     justify-content: space-around;
     padding: 20px;
     margin-top: 20px;
+    color:#070707
 }
 
 .contact-info {
@@ -299,4 +300,9 @@ footer {
 strong{
 
     color: white;
+}
+
+.datos{
+
+    color:#070707
 }

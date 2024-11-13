@@ -19,13 +19,13 @@ include "header.php";      // Incluye el encabezado de la página
     <section class="contact-section">
         <div class="contact-info">
             <h2>Datos de Contacto</h2>
-            <ul>
-                <li><strong>Nombre:</strong> Daniel Fernández Balsera</li>
-                <li><strong>Teléfono:</strong> 690995089</li>
-                <li><strong>Correo corporativo:</strong> <a href="mailto:a24febada@iesgrancapitan.org">a24febada@iesgrancapitan.org</a></li>
-                <li><strong>Correo personal:</strong> <a href="mailto:danifdb19@gmail.com">danifdb19@gmail.com</a></li>
-                <li><strong>Ubicación:</strong> Córdoba, Córdoba</li>
-                <li><strong>Centro de Estudios:</strong> IES Gran Capitán</li>
+            <ul style="margin-top: 2%">
+                <li><strong style="color: black">Nombre:</strong> Daniel Fernández Balsera</li>
+                <li><strong style="color: black">Teléfono:</strong> 690995089</li>
+                <li><strong style="color: black"> Correo corporativo:</strong> <a href="mailto:a24febada@iesgrancapitan.org">a24febada@iesgrancapitan.org</a></li>
+                <li><strong style="color: black">Correo personal:</strong> <a href="mailto:danifdb19@gmail.com">danifdb19@gmail.com</a></li>
+                <li><strong style="color: black">Ubicación:</strong> Córdoba, Córdoba</li>
+                <li><strong style="color: black">Centro de Estudios:</strong> IES Gran Capitán</li>
             </ul>
         </div>
 
