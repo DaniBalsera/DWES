@@ -1,26 +1,63 @@
 <?php
-/**
- * Escriba una página que permita crear una cookie de duración limitada, comprobar el estado de la cookie y destruirla.
- * @author Daniel Fernández Balsera
- */
+/*Escriba una página que permita crear una cookie de duración limitada,
+comprobar el estado de la cookie y destruirla.
 
-// Creamos el nombre de la cookie
-$nombreCookie = "CookieDani";
+Para que sea mas eficiente, vamos a crear un formulario de 3 botones, en el que
+cada uno se encargara de una funcion distinta
 
-// Comprobar si la cookie ya existe
-if (isset($_COOKIE[$nombreCookie])) {
-    // Mostrar el valor de la cookie si ya existe
-    echo "La cookie ya existe: " . $_COOKIE[$nombreCookie] . "<br>";
-    
-    // Destruir la cookie si ha expirado (pasaron más de 60 segundos desde su creación)
-    if (time() > ($_COOKIE[$nombreCookie.'_time'] ?? 0) + 60) {
-        setcookie($nombreCookie, '', time() - 3600); // Establecer una fecha en el pasado para eliminarla
-        echo "La cookie ha expirado y ha sido eliminada.<br>";
-    }
-} else {
-    // Crear una cookie con duración limitada de 60 segundos
-    setcookie($nombreCookie, "Cookie de Daniel", time() + 60);
-    setcookie($nombreCookie.'_time', time(), time() + 60); // Almacena el tiempo de creación
-    echo "La cookie se ha creado y expirará en 60 segundos.<br>";
+    - Crear cookie
+    - Comprobar cookie
+    - Borrar cookie
+
+*/
+
+function crearCookie($nombre, $valor, $expiracion) {
+    setcookie($nombre, $valor, time() + $expiracion,"/");
+    echo "Cookie creada con exito";
 }
+
+function comprobarCookie($nombre){
+    if(isset($_COOKIE[$nombre])){
+    echo "Valor de la cookie: ". $_COOKIE[$nombre];
+    }
+    else{
+    echo "No hay ninguna cookie creada";
+    }
+}
+
+function eliminarCookie($nombre){
+    setCookie( $nombre, "", time() - 3600,"/");
+    unset($_COOKIE[$nombre]);
+    echo "La cookie: " .  $nombre . " ha sido eliminada";
+}
+
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkeo de cookies</title>
+</head>
+<body>
+    <form action="" method="POST">
+    <button type="submit" name="crear" value="crear">Crear cookie</button>
+    <button type="submit" name="comprobar" value="comprobar">Comprobar cookie</button>
+    <button type="submit" name="eliminar" value="eliminar">Destruir Cookie</button>
+
+    <?php
+
+    if(isset($_POST['crear'])){
+        crearCookie("CookieDani", "Cookie de Daniel", 60,"/");
+    } elseif(isset($_POST['comprobar'])){
+        comprobarCookie("CookieDani");
+    } elseif(isset($_POST['eliminar'])){
+        eliminarCookie("CookieDani");
+    }
+    ?>
+
+    </form>
+</body>
+</html>

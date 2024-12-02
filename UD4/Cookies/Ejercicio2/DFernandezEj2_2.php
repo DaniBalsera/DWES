@@ -1,5 +1,11 @@
 
 <?php 
+/** 
+ * 
+ * Si entras aqui sin haber pasado por la otra pagina te dira que no tienes permisos, pero si accedes
+ * primero a la anterior si te los dara
+ * 
+*/
 
 // Esta página comprueba si la cookie está presente y muestra un mensaje al usuario.
 
