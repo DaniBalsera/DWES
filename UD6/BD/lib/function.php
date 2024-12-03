@@ -4,7 +4,7 @@ function conectaDB()
     try {
         // Conexión con la base de datos
         $dsn = 'mysql:host=localhost;dbname=db_mascotas';
-        $db = new PDO($dsn, 'mascotasu', '');
+        $db = new PDO($dsn, 'root', '');
 
         // Configuración de atributos para la conexión PDO
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Manejo de errores
@@ -17,5 +17,12 @@ function conectaDB()
         echo "Error de conexión: " . $e->getMessage();
         exit();
     }
+}
+
+
+function clearData($dato){
+
+return $dato;
+
 }
 ?>
