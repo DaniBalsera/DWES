@@ -16,7 +16,7 @@ $consulta -> execute(array(
                             ":peso" => $peso,
                             ":raza" => $raza));
 
-header("Location: mascotas.php");
+header("Location: usuarios.php");
 }
 
 
