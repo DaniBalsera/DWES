@@ -65,6 +65,7 @@ else{
                     <?php 
                   
                     if(isset($_POST['borrar'])){
+                        // Si pulsamos borrar, se eliminan las cookies, restando el tiempo y haciendo uso del unset;
                         setCookie( "usuario", "", time() - 3600,"/");
                         setCookie( "contrasena", "", time() - 3600,"/");
                         
