@@ -1,6 +1,9 @@
 <?php
 # Importar modelo de abstracción de base de datos
+
+namespace App\Models;
 require_once('DBAbstractModel.php');
+
 
 class Mascotas extends DBAbstractModel {
     private static $instancia;
@@ -28,24 +31,12 @@ class Mascotas extends DBAbstractModel {
         $this->nombre = $nombre;
     }
 
-    public function getNombre() {
-        return $this->nombre;
-    }
-
     public function setPeso($peso) {
         $this->peso = $peso;
     }
 
-    public function getPeso() {
-        return $this->peso;
-    }
-
     public function setRaza($raza) {
         $this->raza = $raza;
-    }
-
-    public function getRaza() {
-        return $this->raza;
     }
 
     public function getMensaje() {
@@ -53,20 +44,22 @@ class Mascotas extends DBAbstractModel {
     }
 
     public function set() {
-        $this->query = "INSERT INTO perros(nombre, peso, raza) VALUES (:nombre, :peso, :raza)";
+        $fecha = new \DateTime();
+        $this->query = "INSERT INTO perros(nombre, peso, raza, created_at) VALUES (:nombre, :peso, :raza, :created_at)";
         $this->parametros['nombre'] = $this->nombre;
         $this->parametros['peso'] = $this->peso;
         $this->parametros['raza'] = $this->raza;
+        $this->parametros['created_at'] = date( 'Y-m-d H:i:s', $fecha->getTimestamp());
         $this->get_results_from_query();
         $this->mensaje = 'mascotas añadidas';
     }
 
     public function get($id = '') {
-        if ($id != '') {
-            $this->query = "SELECT * FROM perros WHERE id = :id";
-            $this->parametros['id'] = $id;
-            $this->get_results_from_query();
-        }
+
+        $this->query = "SELECT * FROM perros WHERE id = :id";
+        $this->parametros['id'] = $id;
+        $this->get_results_from_query();
+        
         if (count($this->rows) == 1) {
             foreach ($this->rows[0] as $propiedad => $valor) {
                 $this->$propiedad = $valor;
@@ -75,35 +68,25 @@ class Mascotas extends DBAbstractModel {
         } else {
             $this->mensaje = 'mascota no encontrada';
         }
+        return $this->rows[0]??null;
+    }
+
+    public function getAll() {
+        $this->query = "SELECT * FROM perros";
+        $this->get_results_from_query();
         return $this->rows;
     }
 
-    public static function getAll() {
-        $instance = self::getInstancia();
-        $instance->query = "SELECT * FROM perros";
-        $instance->get_results_from_query();
-        
-        $mascotas = [];
-        foreach ($instance->rows as $row) {
-            $mascota = new Mascotas();
-            $mascota->id = $row['id'];
-            $mascota->nombre = $row['nombre'];
-            $mascota->peso = $row['peso'];
-            $mascota->raza = $row['raza'];
-            $mascotas[] = $mascota;
-        }
-        
-        return $mascotas;
-    }
-
     public function edit($id = '') {
-        $this->query = "UPDATE perros SET nombre = :nombre, peso = :peso, raza = :raza WHERE id = :id";
+        $fecha = new \DateTime();
+        $this->query = "UPDATE perros SET nombre = :nombre, peso = :peso, raza = :raza, updated_at = :updated_at WHERE id = :id";
+        $this->parametros['id'] = $this->id;
         $this->parametros['nombre'] = $this->nombre;
         $this->parametros['peso'] = $this->peso;
         $this->parametros['raza'] = $this->raza;
-        $this->parametros['id'] = $id;
+        $this->parametros['updated_at'] = date('Y-m-d H:i:s', $fecha->getTimestamp());
         $this->get_results_from_query();
-        $this->mensaje = 'mascota modificada';
+        $this->mensaje = 'Mascota modificada'; 
     }
 
     public function delete($id = '') {
