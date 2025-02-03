@@ -72,19 +72,10 @@ class Portfolio extends DBAbstractModel
         $this->trabajos = $trabajos;
     }
 
-    // Método para crear un proyecto
-    public function createProject($user_id, $titulo, $descripcion, $logoPath, $tecnologias)
-    {
-        $this->query = "INSERT INTO proyectos (titulo, descripcion, logo, tecnologias, usuarios_id) VALUES (:titulo, :descripcion, :logo, :tecnologias, :usuarios_id)";
-        $this->parametros = [
-            'titulo' => $titulo,
-            'descripcion' => $descripcion,
-            'logo' => $logoPath,
-            'tecnologias' => $tecnologias,
-            'usuarios_id' => $user_id
-        ];
-        $this->execute_single_query();
-    }
+ 
+    public function edit(){}
+    public function delete(){}
+    
 
     // Método para crear un trabajo
     public function createJob($user_id, $titulo, $descripcion, $fecha_inicio, $fecha_final)
@@ -100,17 +91,7 @@ class Portfolio extends DBAbstractModel
         $this->execute_single_query();
     }
 
-    // Método para crear una red social
-    public function createSocial($user_id, $red_social, $url)
-    {
-        $this->query = "INSERT INTO redes_sociales (redes_sociales, url, usuarios_id) VALUES (:redes_sociales, :url, :usuarios_id)";
-        $this->parametros = [
-            'redes_sociales' => $red_social,
-            'url' => $url,
-            'usuarios_id' => $user_id
-        ];
-        $this->execute_single_query();
-    }
+   
 
     // Método para crear una habilidad
     public function createSkill($user_id, $habilidades)
@@ -126,14 +107,16 @@ class Portfolio extends DBAbstractModel
     // Método para obtener el portfolio por ID de usuario
     public function getPortfolioByUserId($user_id)
     {
+
+
         // Obtener datos de la tabla proyectos
-        $this->query = "SELECT titulo AS proyecto_titulo, descripcion AS proyecto_descripcion, logo AS proyecto_logo, tecnologias AS proyecto_tecnologias FROM proyectos WHERE usuarios_id = :usuarios_id";
+        $this->query = "SELECT id AS id_p, titulo AS proyecto_titulo, descripcion AS proyecto_descripcion, logo AS proyecto_logo, tecnologias AS proyecto_tecnologias FROM proyectos WHERE usuarios_id = :usuarios_id";
         $this->parametros['usuarios_id'] = $user_id;
         $this->get_results_from_query();
         $proyectos = $this->rows;
 
-        // Obtener datos de la tabla redes_sociales
-        $this->query = "SELECT redes_sociales, url FROM redes_sociales WHERE usuarios_id = :usuarios_id";
+        // Obtener datos de la tabla redes_sociales (datos: id, redes_sociales, url)
+        $this->query = "SELECT id AS id_s, redes_sociales, url FROM redes_sociales WHERE usuarios_id = :usuarios_id";
         $this->parametros['usuarios_id'] = $user_id;
         $this->get_results_from_query();
         $redes_sociales = $this->rows;
@@ -175,86 +158,23 @@ class Portfolio extends DBAbstractModel
         }
     }
 
-    // Método para editar un portfolio
-    public function edit($data = array())
+    public function getProjectById($id)
     {
-        $user_id = $data['user_id'];
-
-        // Actualizar datos en la tabla proyectos
-        $this->query = "UPDATE proyectos SET titulo = :titulo, descripcion = :descripcion, logo = :logo, tecnologias = :tecnologias WHERE usuarios_id = :usuarios_id";
-        $this->parametros = [
-            'titulo' => $data['proyecto_titulo'],
-            'descripcion' => $data['proyecto_descripcion'],
-            'logo' => $data['proyecto_logo'],
-            'tecnologias' => $data['proyecto_tecnologias'],
-            'usuarios_id' => $user_id
-        ];
-        $this->execute_single_query();
-
-        // Actualizar datos en la tabla redes_sociales
-        $redes_sociales = [
-            ['redes_sociales' => $data['red_social_1'], 'url' => $data['url_1']],
-            ['redes_sociales' => $data['red_social_2'], 'url' => $data['url_2']],
-            ['redes_sociales' => $data['red_social_3'], 'url' => $data['url_3']]
-        ];
-
-        foreach ($redes_sociales as $index => $red_social) {
-            if (!empty($red_social['redes_sociales']) && !empty($red_social['url'])) {
-                $this->query = "UPDATE redes_sociales SET redes_sociales = :redes_sociales, url = :url WHERE usuarios_id = :usuarios_id AND id = :id";
-                $this->parametros = [
-                    'redes_sociales' => $red_social['redes_sociales'],
-                    'url' => $red_social['url'],
-                    'usuarios_id' => $user_id,
-                    'id' => $index + 1 // Asumiendo que los IDs de las redes sociales son 1, 2 y 3
-                ];
-                $this->execute_single_query();
-            }
-        }
-
-        // Actualizar datos en la tabla skills
-        $this->query = "UPDATE skills SET habilidades = :habilidades WHERE usuarios_id = :usuarios_id";
-        $this->parametros = [
-            'habilidades' => $data['skills'],
-            'usuarios_id' => $user_id
-        ];
-        $this->execute_single_query();
-
-        // Actualizar datos en la tabla trabajos
-        foreach ($data['trabajos'] as $index => $trabajo) {
-            $this->query = "UPDATE trabajos SET titulo = :titulo, descripcion = :descripcion, fecha_inicio = :fecha_inicio, fecha_final = :fecha_final WHERE usuarios_id = :usuarios_id AND id = :id";
-            $this->parametros = [
-                'titulo' => $trabajo['titulo'],
-                'descripcion' => $trabajo['descripcion'],
-                'fecha_inicio' => $trabajo['fecha_inicio'],
-                'fecha_final' => $trabajo['fecha_final'],
-                'usuarios_id' => $user_id,
-                'id' => $index + 1 // Asumiendo que los IDs de los trabajos son 1, 2, 3, etc.
-            ];
-            $this->execute_single_query();
-        }
+        $this->query = "SELECT * FROM proyectos WHERE id = :id OR usuarios_id = :usuarios_id";
+        $this->parametros['usuarios_id'] = $id;
+        $this->parametros['id'] = $id;
+        $this->get_results_from_query();
+        return $this->rows;
     }
 
-    // Método para eliminar un portfolio
-    public function delete($id = '')
+    public function getRedSocialById($id)
     {
-        $user_id = $id;
-
-        $this->query = "DELETE FROM proyectos WHERE usuarios_id = :usuarios_id";
-        $this->parametros['usuarios_id'] = $user_id;
-        $this->execute_single_query();
-
-        $this->query = "DELETE FROM redes_sociales WHERE usuarios_id = :usuarios_id";
-        $this->parametros['usuarios_id'] = $user_id;
-        $this->execute_single_query();
-
-        $this->query = "DELETE FROM skills WHERE usuarios_id = :usuarios_id";
-        $this->parametros['usuarios_id'] = $user_id;
-        $this->execute_single_query();
-
-        $this->query = "DELETE FROM trabajos WHERE usuarios_id = :usuarios_id";
-        $this->parametros['usuarios_id'] = $user_id;
-        $this->execute_single_query();
+        $this->query = "SELECT * FROM redes_sociales WHERE usuarios_id = :usuarios_id";
+        $this->parametros['usuarios_id'] = $id;
+        $this->get_results_from_query();
+        return $this->rows;
     }
+
 
     // Método para obtener el usuario por ID
     public function getUserById($user_id)

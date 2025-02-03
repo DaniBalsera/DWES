@@ -25,9 +25,9 @@
             </div>
         <?php endif; ?>
         <form method="POST" action="../create-project" enctype="multipart/form-data">
-            <input type="text" name="titulo" placeholder="Título del Proyecto" value="<?php echo isset($titulo) ? htmlspecialchars($titulo) : ''; ?>">
-            <input type="text" name="descripcion" placeholder="Descripción del Proyecto" value="<?php echo isset($descripcion) ? htmlspecialchars($descripcion) : ''; ?>">
-            <input type="text" name="tecnologias" placeholder="Tecnologías Utilizadas" value="<?php echo isset($tecnologias) ? htmlspecialchars($tecnologias) : ''; ?>">
+            <input type="text" name="titulo" placeholder="Título del Proyecto" >
+            <input type="text" name="descripcion" placeholder="Descripción del Proyecto">
+            <input type="text" name="tecnologias" placeholder="Tecnologías Utilizadas">
             <input type="file" name="logo" id="logo">
             <button type="submit">Crear Proyecto</button>
         </form>

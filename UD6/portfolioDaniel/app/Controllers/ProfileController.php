@@ -117,7 +117,6 @@ class ProfileController extends BaseController
                     //      $this->sendActivationEmail($email, $secureToken);
 
                     // Redirigir a la vista de bienvenida
-                    session_start();
                     $_SESSION['id'] = $perfil->getId(); // Usar el método getId() en lugar de acceder directamente a la propiedad
                     $_SESSION['nombre'] = $nombre;
                     header('Location: /welcome');
@@ -138,16 +137,30 @@ class ProfileController extends BaseController
 
     public function welcomePage()
     {
-        session_start();
         $portfolio = null;
     
         if (isset($_SESSION['id'])) {
             $portfolioModel = Portfolio::getInstancia();
             $portfolio = $portfolioModel->getPortfolioByUserId($_SESSION['id']);
         }
+
     
         $this->renderHTML('../app/view/welcome_view.php', ['portfolio' => $portfolio]);
     }
+
+    // public function welcomePage()
+    // {
+    //     $data = [];
+    
+    //     if (isset($_SESSION['id'])) {
+    //         $portfolioModel = Portfolio::getInstancia();
+    //         $data['proyectos'] = $portfolioModel->getProjectById($_SESSION['id']);
+    //         $data['lista'] = $portfolioModel->getPortfolioByUserId($_SESSION['id']);
+    //     }
+
+    
+    //     $this->renderHTML('../app/view/welcome_view.php', $data);
+    // }
 
     
 public function login()
@@ -170,7 +183,7 @@ public function login()
 
         if ($usuario) {
             // Iniciar sesión
-            session_start();
+
             $_SESSION['id'] = $usuario['id']; // Usar el ID del usuario desde el array
             $_SESSION['email'] = $email;
             $_SESSION['nombre'] = $usuario['nombre']; // Acceder al nombre del usuario desde el array
