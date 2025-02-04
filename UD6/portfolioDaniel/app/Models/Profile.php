@@ -34,6 +34,14 @@ class Profile extends DBAbstractModel {
     private $fecha_creacion_token;
     private $cuenta_activa;
 
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
@@ -158,9 +166,7 @@ class Profile extends DBAbstractModel {
         return $this->rows;
     }
 
-    public function getId() {
-        return $this->id;
-    }
+
 
     public function getNombre(){
         return $this->nombre;
@@ -191,6 +197,13 @@ class Profile extends DBAbstractModel {
         $this->parametros['id'] = $id;
         $this->get_results_from_query();
         $this->mensaje = 'Perfil eliminado';
+    }
+
+    public function getUserById($id = '') {
+        $this->query = "SELECT * FROM usuarios WHERE id = :id";
+        $this->parametros['id'] = $id;
+        $this->get_results_from_query();
+        return $this->rows;
     }
 }
 

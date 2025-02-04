@@ -4,7 +4,7 @@ namespace App\Models;
 
 require_once('DBAbstractModel.php');
 
-class Job extends DBAbstractModel{
+class Jobs extends DBAbstractModel{
 
     private static $instancia;
 
@@ -201,6 +201,15 @@ class Job extends DBAbstractModel{
         
     }
 
+    // Metodo getJobById
+
+    public function getJobById($id)
+    {
+        $this->query = "SELECT * FROM trabajos WHERE id = :id";
+        $this->parametros['id'] = $id;
+        $this->get_results_from_query();
+        return $this->rows;
+    }
 
 }
 

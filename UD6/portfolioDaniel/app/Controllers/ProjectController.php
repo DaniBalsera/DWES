@@ -18,7 +18,6 @@ class ProjectController extends BaseController
     public function createProject()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            session_start();
             $user_id = $_SESSION['id']; // Obtenemos el ID del usuario de la sesión
             $titulo = trim($_POST['titulo']);
             $descripcion = trim($_POST['descripcion']);
@@ -67,7 +66,6 @@ class ProjectController extends BaseController
                 $portfolio->setUsuariosId($user_id);
 
                 $portfolio->set();
-
                 // Redirigir al welcome view
                 header('Location: /welcome');
                 exit();

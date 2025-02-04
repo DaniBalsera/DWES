@@ -136,32 +136,7 @@ class RedSocial extends DBAbstractModel
     }
 
 
-    // Método para crear una red social
-    // public function createSocial($user_id, $red_social, $url)
-    // {
-    //     $this->query = "INSERT INTO redes_sociales (redes_sociales, url, usuarios_id) 
-    //                     VALUES (:redes_sociales, :url, :usuarios_id)";
-    //     $this->parametros = [
-    //         'redes_sociales' => $red_social,
-    //         'url' => $url,
-    //         'usuarios_id' => $user_id
-    //     ];
-    //     $this->execute_single_query();
-    // }
 
-    // Método para editar una red social
-    // public function editSocial($id, $red_social, $url)
-    // {
-    //     $this->query = "UPDATE redes_sociales 
-    //                     SET redes_sociales = :redes_sociales, url = :url 
-    //                     WHERE id = :id";
-    //     $this->parametros = [
-    //         'redes_sociales' => $red_social,
-    //         'url' => $url,
-    //         'id' => $id
-    //     ];
-    //     $this->execute_single_query();
-    // }
 
     // Método para obtener una red social por ID
     public function getRedSocialById($id)

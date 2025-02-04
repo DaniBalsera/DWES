@@ -27,9 +27,12 @@
         <form method="POST" action="../create-job">
             <input type="text" name="titulo" placeholder="Título del Trabajo">
             <textarea name="descripcion" placeholder="Descripción del Trabajo"></textarea>
-            
+            <input type="text" name="logros" placeholder="Logros del Trabajo">
             <input type="date" name="fecha_inicio" placeholder="Fecha de Inicio">
             <input type="date" name="fecha_final" placeholder="Fecha de Finalización">
+            <label for="visible">Visible</label>
+            <input type="checkbox" name="visible" <?php echo isset($visible) && $visible ? 'checked' : ''; ?>>
+            <br><br>
             <button type="submit">Crear Trabajo</button>
         </form>
     </div>

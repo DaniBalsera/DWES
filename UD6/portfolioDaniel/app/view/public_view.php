@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title>Portfolios</title>
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/style.css">
 </head>
 <body>
@@ -28,14 +28,11 @@ if (isset($_POST['nombre'])) {
 ?>
 
 <div class="container">
-
-   
     <form method="POST" action="">
         <input type="text" name="nombre" placeholder="Buscar perfiles...">
         <button type="submit">Buscar</button>
     </form>
     <br>
-
 
     <?php
     // Si existen resultados en la sesión, mostrarlos.
@@ -44,19 +41,27 @@ if (isset($_POST['nombre'])) {
         if ($perfiles) {
             // Si es un solo perfil, mostramos sus datos.
             if (is_array($perfiles)) {
+                echo '<div class="card-container">';
                 foreach ($perfiles as $perfil) {
-                    echo "<img src='{$perfil['foto']}' alt='Foto de {$perfil['nombre']}' width='100'>";
+                    echo '<div class="card">';
+                    echo "<img src='{$perfil['foto']}' alt='Foto de {$perfil['nombre']}' class='card-img'>";
+                    echo "<div class='card-content'>";
                     echo "<h2>{$perfil['nombre']} {$perfil['apellidos']}</h2>";
                     echo "<p>{$perfil['categoria_profesional']}</p>";
-     
+                    echo "<a href='/portfolio/view/{$perfil['id']}' class='view-portfolio-button'>Ver Portfolio</a>";
+                    echo "</div>";
+                    echo "</div>";
                 }
+                echo '</div>';
             } 
         } else {
             echo "<p>No se encontraron perfiles</p>";
         }
     }
     ?>
-
 </div>
+
+
+</style>
 </body>
 </html>

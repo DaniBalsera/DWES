@@ -13,8 +13,7 @@ class SocialController extends BaseController
 
     public function createSocial()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            session_start();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {           
             $user_id = $_SESSION['id']; // Obtenemos el ID del usuario de la sesión
             $red_social = trim($_POST['red_social']);
             $url = trim($_POST['url']);

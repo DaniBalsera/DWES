@@ -13,8 +13,7 @@
     </style>
 </head>
 <body>
-    
-<?php include 'includes/header.php'; ?>
+    <?php include 'includes/header.php'; ?>
     <div class="container">
         <h1>Agregar Habilidad</h1>
         <?php if (isset($errors) && !empty($errors)): ?>
@@ -25,7 +24,9 @@
             </div>
         <?php endif; ?>
         <form method="POST" action="../create-skill">
-            <input type="text" name="habilidad" placeholder="Habilidad" value="<?php echo isset($habilidad) ? htmlspecialchars($habilidad) : ''; ?>">
+            <input type="text" name="habilidades" placeholder="Habilidad" value="<?php echo isset($habilidades) ? htmlspecialchars($habilidades) : ''; ?>">
+            <label for="visible">Visible</label>
+            <input type="checkbox" name="visible" <?php echo isset($visible) && $visible ? 'checked' : ''; ?>>
             <button type="submit">Agregar Habilidad</button>
         </form>
     </div>

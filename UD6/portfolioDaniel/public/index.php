@@ -5,10 +5,12 @@ require_once("../vendor/autoload.php");
 require_once("../app/Controllers/ProfileController.php");
 require_once("../app/Controllers/PortfolioController.php");
 
+use App\Controllers\JobController;
 use App\Core\Router;
 use App\Controllers\ProfileController;
 use App\Controllers\PortfolioController;
 use App\Controllers\ProjectController;
+use App\Controllers\SkillsController;
 use App\Controllers\SocialController;
 
 $router = new Router();
@@ -111,32 +113,60 @@ $router->add(array(
     'path' => '/^\/social\/eliminar\/\d+$/',
     'action' => [SocialController::class, 'deleteSocial']
 ));
+
 // Rutas para los skills
 
 $router->add(array(
     "name" => "create-skill",
     'path' => '/^\/skill\/crear$/',
-    'action' => [PortfolioController::class, 'showCreateSkillForm']
+    'action' => [SkillsController::class, 'showCreateSkillsForm']
 ));
 
 $router->add(array(
     "name" => "create-skill-post",
     'path' => '/^\/create-skill$/',
-    'action' => [PortfolioController::class, 'createSkill']
+    'action' => [SkillsController::class, 'createSkills']
 ));
+
+$router->add(array(
+    "name" => "delete-skill",
+    'path' => '/^\/skill\/eliminar\/\d+$/',
+    'action' => [SkillsController::class, 'deleteSkills']
+));
+
 
 // Rutas para los trabajos
 
 $router->add(array(
     "name" => "create-job",
     'path' => '/^\/trabajo\/crear$/',
-    'action' => [PortfolioController::class, 'showCreateJobForm']
+    'action' => [JobController::class, 'showCreateJobForm']
 ));
 
 $router->add(array(
     "name" => "create-job-post",
     'path' => '/^\/create-job$/',
-    'action' => [PortfolioController::class, 'createJob']
+    'action' => [JobController::class, 'createJob']
+));
+
+$router->add(array(
+    "name" => "edit-job",
+    'path' => '/^\/trabajo\/editar\/\d+$/',
+    'action' => [JobController::class, 'editJobForm']
+));
+
+$router->add(array(
+    "name" => "delete-job",
+    'path' => '/^\/trabajo\/eliminar\/\d+$/',
+    'action' => [JobController::class, 'deleteJob']
+));
+
+// Rutas para ver el portfolio de un usuario
+
+$router->add(array(
+    "name" => "portfolio",
+    'path' => '/^\/portfolio\/view\/\d+$/',
+    'action' => [ProfileController::class, 'showPortfolios']
 ));
 
 $request = $_SERVER['REQUEST_URI'];
