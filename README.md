@@ -30,6 +30,7 @@ Bienvenido/a a este repositorio donde podrás encontrar enlaces a diferentes pro
 
 ### 5. Symblog
 📂 Repositorio: [Symblog](https://github.com/DaniBalsera/Symblog) 
+
 📖 Descripción: Proyect básico de symblog para publicar diferentes blogs y comentarios.
 
 ---
